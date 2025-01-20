@@ -11,7 +11,16 @@ class SplashScreenState extends State<SplashScreen>{
  Widget build(BuildContext context){
     return Scaffold(
       backgroundColor:const Color(0xFFFF5858),
-     body:Column(
+      
+     body:Container(
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+              colors: [Color(0xFFFF5858), Color(0xFFF857A6)],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+       ),
+      child:Column(
        crossAxisAlignment: CrossAxisAlignment.center,
        mainAxisAlignment: MainAxisAlignment.center,
    
@@ -21,11 +30,12 @@ class SplashScreenState extends State<SplashScreen>{
          mainAxisAlignment: MainAxisAlignment.center,
           children: [
         Container(
-          width:50,
-          height:50,
+          width:200,
+          height:200,
           decoration:   const BoxDecoration(
              color:  Colors.white,
-             borderRadius:  BorderRadius.all(Radius.circular(20))
+             
+             borderRadius:  BorderRadius.all(Radius.circular(150))
           ),
           child:Padding(
             padding:const EdgeInsets.all(9),
@@ -39,6 +49,7 @@ class SplashScreenState extends State<SplashScreen>{
         
           
         ],
+     ),
      ),
     );
   }
