@@ -1,12 +1,22 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:rebuy/view/login_screen.dart';
 
 
 class SplashScreen extends StatefulWidget{
   const SplashScreen({super.key});
   @override
-  State<StatefulWidget> createState()=>SplashScreenState();
+  State<StatefulWidget> createState()=>_SplashScreenState();
 } 
-class SplashScreenState extends State<SplashScreen>{
+class _SplashScreenState extends State<SplashScreen>{
+  @override
+  void initState(){
+    super.initState();
+    Timer(const Duration(seconds: 3), (){
+      Navigator.pushReplacement(context,MaterialPageRoute(builder: (context)=> LoginScreen()));
+    });
+  }
   @override
  Widget build(BuildContext context){
     return Scaffold(
@@ -30,8 +40,8 @@ class SplashScreenState extends State<SplashScreen>{
          mainAxisAlignment: MainAxisAlignment.center,
           children: [
         Container(
-          width:200,
-          height:200,
+          width:130,
+          height:130,
           decoration:   const BoxDecoration(
              color:  Colors.white,
              
